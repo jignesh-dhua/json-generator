@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "object",
+    "title": "My schema",
+    "description": "Created with Liquid Studio 2018 (https://www.liquid-technologies.com)",
+    "additionalProperties": {
+        "not": {}
+    },
+    "properties": {
+        "Number": {
+            "type": "integer"
+        },
+        "Name": {
+            "type": "string",
+            "title": "Title of Name",
+    		"description": "Description of name"
+        },
+        "status": {
+            "type": "boolean",
+            "title": "Status",
+    		"description": "Description of Status"
+        },
+        "Address":{
+			"type" : "object",
+			"properties" : {
+				"line1" : {
+					"type": "string",
+            		"title": "Address Line 1",
+    				"description": "Description of Line 1"
+				},
+				"line2" : {
+					"type": "string",
+            		"title": "Address Line 2",
+    				"description": "Description of Line 2"
+				}
+			}        
+        }
+    }
+}
