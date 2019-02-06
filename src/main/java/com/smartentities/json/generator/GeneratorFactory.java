@@ -16,9 +16,9 @@ import com.smartentities.json.generator.generators.StringGenerator;
 
 public class GeneratorFactory {
 
-	public static JsonValueGenerator getGenerator(Schema schema) {
+	public static JsonValueGenerator<?> getGenerator(Schema schema) {
 
-		JsonValueGenerator jsonValueGenerator = null;
+		JsonValueGenerator<?> jsonValueGenerator = null;
 
 		if (schema instanceof StringSchema) {
 			jsonValueGenerator = new StringGenerator(schema);

@@ -30,18 +30,6 @@ public class ObjectGenerator extends JsonValueGenerator<JSONObject> {
 			for (Entry<String, Schema> entry : map.entrySet()) {
 				String key = entry.getKey();
 
-				System.out.println(entry.getValue().getClass());
-
-//				if (entry.getValue() instanceof StringSchema) {
-//					object.put(key, new StringGenerator(entry.getValue()).generate());
-//				} else if (entry.getValue() instanceof NumberSchema) {
-//					object.put(key, new NumberGenerator(entry.getValue()).generate());
-//				} else if (entry.getValue() instanceof BooleanSchema) {
-//					object.put(key, new BooleanGenerator(entry.getValue()).generate());
-//				} else if (entry.getValue() instanceof ObjectSchema) {
-//					object.put(key, new ObjectGenerator(entry.getValue()).generate());
-//				}
-
 				object.put(key, GeneratorFactory.getGenerator(entry.getValue()).generate());
 			}
 			return object;
