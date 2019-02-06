@@ -1,4 +1,4 @@
-package com.smartentities.json.generator;
+package com.smartentities.json.generator.generators;
 
 import java.util.Map;
 import java.util.Map.Entry;
@@ -12,8 +12,8 @@ import org.json.JSONObject;
 
 public class ObjectGenerator extends JsonValueGenerator<JSONObject> {
 
-	public ObjectGenerator(String propertyName, Schema schema) {
-		super(propertyName, schema);
+	public ObjectGenerator(Schema schema) {
+		super(schema);
 	}
 
 	@Override
@@ -31,13 +31,13 @@ public class ObjectGenerator extends JsonValueGenerator<JSONObject> {
 				System.out.println(entry.getValue().getClass());
 
 				if (entry.getValue() instanceof StringSchema) {
-					object.put(key, new StringGenerator(key, entry.getValue()).generate());
+					object.put(key, new StringGenerator(entry.getValue()).generate());
 				} else if (entry.getValue() instanceof NumberSchema) {
-					object.put(key, new NumberGenerator(key, entry.getValue()).generate());
+					object.put(key, new NumberGenerator(entry.getValue()).generate());
 				} else if (entry.getValue() instanceof BooleanSchema) {
-					object.put(key, new BooleanGenerator(key, entry.getValue()).generate());
-				} else if(entry.getValue() instanceof ObjectSchema) {
-					object.put(key, new ObjectGenerator(key, entry.getValue()).generate());
+					object.put(key, new BooleanGenerator(entry.getValue()).generate());
+				} else if (entry.getValue() instanceof ObjectSchema) {
+					object.put(key, new ObjectGenerator(entry.getValue()).generate());
 				}
 
 			}

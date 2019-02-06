@@ -1,13 +1,13 @@
-package com.smartentities.json.generator;
+package com.smartentities.json.generator.generators;
 
 import org.everit.json.schema.Schema;
 
 public class StringGenerator extends JsonValueGenerator<String> {
 
-	
-	public StringGenerator(String propertyName, Schema schema) {
-		super(propertyName, schema);
+	public StringGenerator(Schema schema) {
+		super(schema);
 	}
+
 	@Override
 	public String generate() {
 		return "Test";

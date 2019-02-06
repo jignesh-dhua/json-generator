@@ -1,0 +1,21 @@
+[
+	{
+		"productISBN": "9780190200107",
+		"authors": [
+			{
+				"authorSequence": 1,
+				"roleCode": "B01",
+				"roleDescription": "Edited by",
+				"firstName": "John",
+				"lastName": "Smith",
+				"jobTitle": "Senior Lecturer in Musicology",
+				"affiliation": "National University of Ireland, Maynooth",
+				"location": "Maynooth",
+				"emailAddress": "john.smith@university.ac.uk",
+				"authorTitle": "Sir",
+				"qualification": "PhD",
+				"country": "Ireland"
+			}
+		]
+	}
+]

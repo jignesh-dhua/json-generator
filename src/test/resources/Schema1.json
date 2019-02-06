@@ -1,0 +1,145 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "http://oup.com/sps/AuthorExport.json",
+	"type": "array",
+	"items": {
+		"$id": "http://oup.com/sps/AuthorExport.json/items",
+		"type": "object",
+		"properties": {
+			"productISBN": {
+				"$id": "http://oup.com/sps/AuthorExport.json/items/properties/productISBN",
+				"type": "string",
+				"title": "Product ISBN",
+				"default": "",
+				"maxLength": 18,
+				"examples": [
+					"9782314569632"
+				]
+			},
+			"authors": {
+				"$id": "http://oup.com/sps/AuthorExport.json/items/properties/authors",
+				"type": "array",
+				"minItems": 1,
+				"items": {
+					"type": "object",
+					"properties": {
+						"authorSequence": {
+							"$id": "http://oup.com/sps/AuthorExport.json/items/properties/authors/items/properties/authorSequence",
+							"type": "integer",
+							"title": "Position in the list of Authors",
+							"examples": [
+								"01"
+							]
+						},
+						"roleCode": {
+							"$id": "http://oup.com/sps/AuthorExport.json/items/properties/authors/items/properties/roleCode",
+							"type": "string",
+							"title": "Role.ONIX Mapping",
+							"default": "",
+							"examples": [
+								"B01"
+							]
+						},
+						"roleDescription": {
+							"$id": "http://oup.com/sps/AuthorExport.json/items/properties/authors/items/properties/roleDescription",
+							"type": "string",
+							"title": "Mapping on Role.Description",
+							"default": "",
+							"examples": [
+								"Edited by"
+							]
+						},
+						"firstName": {
+							"$id": "http://oup.com/sps/AuthorExport.json/items/properties/authors/items/properties/firstName",
+							"type": "string",
+							"title": "Contact.Forenames",
+							"default": "",
+							"examples": [
+								"Jignesh"
+							]
+						},
+						"lastName": {
+							"$id": "http://oup.com/sps/AuthorExport.json/items/properties/authors/items/properties/lastName",
+							"type": "string",
+							"title": "Contact.Surenames",
+							"default": "",
+							"examples": [
+								"Dhua"
+							]
+						},
+						"jobTitle": {
+							"$id": "http://oup.com/sps/AuthorExport.json/items/properties/authors/items/properties/jobTitle",
+							"type": "string",
+							"title": "Contact.Job Title",
+							"default": "",
+							"examples": [
+								"Computer Scientist"
+							]
+						},
+						"affiliation": {
+							"$id": "http://oup.com/sps/AuthorExport.json/items/properties/authors/items/properties/affiliation",
+							"type": "string",
+							"title": "Contact.Organisation Name",
+							"default": "",
+							"examples": [
+								"University of Oxford, Oxford"
+							]
+						},
+						"location": {
+							"$id": "http://oup.com/sps/AuthorExport.json/items/properties/authors/items/properties/location",
+							"type": "string",
+							"title": "Contact.Whereabouts",
+							"default": "",
+							"examples": [
+								"Oxford"
+							]
+						},
+						"emailAddress": {
+							"$id": "http://oup.com/sps/AuthorExport.json/items/properties/authors/items/properties/emailAddress",
+							"type": "string",
+							"title": "Contact.E-Mail",
+							"default": "",
+							"examples": [
+								"jignesh.dhua@university.ac.uk"
+							]
+						},
+						"authorTitle": {
+							"$id": "http://oup.com/sps/AuthorExport.json/items/properties/authors/items/properties/authorTitle",
+							"type": "string",
+							"title": "Contact.Title, Text to come before the name. First four examples Lady, Judge, Sir, Dr.",
+							"default": "",
+							"examples": [
+								"Sir"
+							]
+						},
+						"qualification": {
+							"$id": "http://oup.com/sps/AuthorExport.json/items/properties/authors/items/properties/qualification",
+							"type": "string",
+							"title": "Qualification of Author",
+							"default": "",
+							"examples": [
+								"PhD"
+							]
+						},
+						"country": {
+							"$id": "http://oup.com/sps/AuthorExport.json/items/properties/authors/items/properties/country",
+							"type": "string",
+							"title": "Country of Author",
+							"default": "",
+							"examples": [
+								"India"
+							]
+						}
+					},
+					"required": [
+						"authorSequence"
+					]
+				}
+			},
+			"required": [
+				"productISBN",
+				"authors"
+			]
+		}
+	}
+}

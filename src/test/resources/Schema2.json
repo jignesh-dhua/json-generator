@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "http://oup.com/sps/AuthorExport.json",
+	"type" : "object",
+	"properties" : {
+		"rectangle" : {"$ref" : "#/definitions/Rectangle" }
+	},
+	"definitions" : {
+		"size" : {
+			"type" : "number",
+			"minimum" : 0
+		},
+		"Rectangle" : {
+			"type" : "object",
+			"properties" : {
+				"a" : {"$ref" : "#/definitions/size"},
+				"b" : {"$ref" : "#/definitions/size"}
+			}
+		}
+	}
+}

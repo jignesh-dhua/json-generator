@@ -1,4 +1,4 @@
-package com.smartentities.json.generator;
+package com.smartentities.json.generator.test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -17,9 +17,9 @@ public class JSONValidatorExample {
 	public static void main(String[] args) {
 
 		try {
-			JSONObject 	jsonSchema = new JSONObject(new JSONTokener(new FileInputStream(new File("src/main/resources/AuthorSchema.json"))));
+			JSONObject 	jsonSchema = new JSONObject(new JSONTokener(new FileInputStream(new File("src/test/resources/AuthorSchema.json"))));
 
-			JSONArray jsonSubject = new JSONArray(new JSONTokener(new FileInputStream(new File("src/main/resources/Sample1.json"))));
+			JSONArray jsonSubject = new JSONArray(new JSONTokener(new FileInputStream(new File("src/test/resources/Sample1.json"))));
 
 			Schema schema = SchemaLoader.load(jsonSchema);
 			schema.validate(jsonSubject);

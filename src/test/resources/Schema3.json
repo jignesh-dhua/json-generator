@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/person",
+    "type": "array",
+    "title": "Person schema",
+    "description": "The Person Detail",
+   
+    "maxItems": 3,
+    "minItems": 1,
+    "items": [
+        {
+            "$id": "http://example.com/person/items",
+            "type": "object",
+            "properties": {
+                "number": {
+                    "$id": "http://example.com/id",
+                    "type": "integer",
+                    "title": "Number",
+                    "description": "Number of Person",
+                    "default": 1
+                },
+                "name": {
+                    "$id": "http://example.com/name",
+                    "type": "string",
+                    "title": "Name",
+                    "description": "Name of Person",
+                    "default": "Test"
+                }
+            },
+            "required": [
+                "number",
+                "name"
+            ]
+        }
+    ]
+}

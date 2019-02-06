@@ -1,11 +1,11 @@
-package com.smartentities.json.generator;
+package com.smartentities.json.generator.generators;
 
 import org.everit.json.schema.Schema;
 
 public class NumberGenerator extends JsonValueGenerator<Integer> {
 
-	public NumberGenerator(String propertyName, Schema schema) {
-		super(propertyName, schema);
+	public NumberGenerator(Schema schema) {
+		super(schema);
 	}
 
 	@Override
