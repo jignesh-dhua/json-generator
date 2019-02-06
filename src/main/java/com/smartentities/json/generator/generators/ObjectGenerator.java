@@ -10,6 +10,8 @@ import org.everit.json.schema.Schema;
 import org.everit.json.schema.StringSchema;
 import org.json.JSONObject;
 
+import com.smartentities.json.generator.GeneratorFactory;
+
 public class ObjectGenerator extends JsonValueGenerator<JSONObject> {
 
 	public ObjectGenerator(Schema schema) {
@@ -30,16 +32,17 @@ public class ObjectGenerator extends JsonValueGenerator<JSONObject> {
 
 				System.out.println(entry.getValue().getClass());
 
-				if (entry.getValue() instanceof StringSchema) {
-					object.put(key, new StringGenerator(entry.getValue()).generate());
-				} else if (entry.getValue() instanceof NumberSchema) {
-					object.put(key, new NumberGenerator(entry.getValue()).generate());
-				} else if (entry.getValue() instanceof BooleanSchema) {
-					object.put(key, new BooleanGenerator(entry.getValue()).generate());
-				} else if (entry.getValue() instanceof ObjectSchema) {
-					object.put(key, new ObjectGenerator(entry.getValue()).generate());
-				}
+//				if (entry.getValue() instanceof StringSchema) {
+//					object.put(key, new StringGenerator(entry.getValue()).generate());
+//				} else if (entry.getValue() instanceof NumberSchema) {
+//					object.put(key, new NumberGenerator(entry.getValue()).generate());
+//				} else if (entry.getValue() instanceof BooleanSchema) {
+//					object.put(key, new BooleanGenerator(entry.getValue()).generate());
+//				} else if (entry.getValue() instanceof ObjectSchema) {
+//					object.put(key, new ObjectGenerator(entry.getValue()).generate());
+//				}
 
+				object.put(key, GeneratorFactory.getGenerator(entry.getValue()).generate());
 			}
 			return object;
 		}

@@ -10,7 +10,6 @@ public class BooleanGenerator extends JsonValueGenerator<Boolean> {
 
 	@Override
 	public Boolean generate() {
-
 		return false;
 	}
 }

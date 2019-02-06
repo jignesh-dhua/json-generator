@@ -1,10 +1,10 @@
 package com.smartentities.json.generator.generators;
 
-import java.util.List;
-
 import org.everit.json.schema.ArraySchema;
 import org.everit.json.schema.Schema;
 import org.json.JSONArray;
+
+import com.smartentities.json.generator.GeneratorFactory;
 
 public class ArrayGenerator extends JsonValueGenerator<JSONArray> {
 
@@ -18,18 +18,14 @@ public class ArrayGenerator extends JsonValueGenerator<JSONArray> {
 		if (schema instanceof ArraySchema) {
 			ArraySchema arraySchema = (ArraySchema) schema;
 
-			List<Schema> itemSchemas = arraySchema.getItemSchemas();
+			Schema allItemSchema = arraySchema.getAllItemSchema();
 
 			JSONArray jsonArray = new JSONArray();
 
-			if (itemSchemas != null) {
-				for (Schema schema : itemSchemas) {
+			jsonArray.put(GeneratorFactory.getGenerator(allItemSchema).generate());
 
-				}
-			}
-
+			return jsonArray;
 		}
-
 		return new JSONArray();
 	}
 }
