@@ -34,4 +34,30 @@ public class GeneratorConfig {
 	public static GeneratorConfig fromJsonSchema(Schema schema) throws JSONException, FileNotFoundException {
 		return new GeneratorConfig(schema);
 	}
+
+	public Schema getSchema() {
+		return schema;
+	}
+
+	public void setSchema(Schema schema) {
+		this.schema = schema;
+	}
+
+	public String getSchemaPath() {
+		return schemaPath;
+	}
+
+	public void setSchemaPath(String schemaPath) {
+		this.schemaPath = schemaPath;
+	}
+
+	public JSONObject getJsonSchema() {
+		return jsonSchema;
+	}
+
+	public void setJsonSchema(JSONObject jsonSchema) {
+		this.jsonSchema = jsonSchema;
+	}
+	
+	
 }
