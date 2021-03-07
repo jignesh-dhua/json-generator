@@ -9,11 +9,16 @@ public class StringGenerator extends JsonValueGenerator<String> {
 
 	public StringGenerator(Schema schema) {
 		super(schema);
-		StringSchema stringSchema = (StringSchema) schema;
 	}
 
 	@Override
 	public String generate() {
+
+		String formatName = ((StringSchema)schema).getFormatValidator().formatName();
+		if (formatName != null && formatName.equals("date-time")) {
+			return "2019-09-18T22:30:01Z";
+		}
+
 		int length = 7;
 		StringBuilder sb = new StringBuilder();
 

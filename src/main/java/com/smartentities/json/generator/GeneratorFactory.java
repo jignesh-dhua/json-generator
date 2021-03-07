@@ -1,18 +1,7 @@
 package com.smartentities.json.generator;
 
-import org.everit.json.schema.ArraySchema;
-import org.everit.json.schema.BooleanSchema;
-import org.everit.json.schema.NumberSchema;
-import org.everit.json.schema.ObjectSchema;
-import org.everit.json.schema.Schema;
-import org.everit.json.schema.StringSchema;
-
-import com.smartentities.json.generator.generators.ArrayGenerator;
-import com.smartentities.json.generator.generators.BooleanGenerator;
-import com.smartentities.json.generator.generators.JsonValueGenerator;
-import com.smartentities.json.generator.generators.NumberGenerator;
-import com.smartentities.json.generator.generators.ObjectGenerator;
-import com.smartentities.json.generator.generators.StringGenerator;
+import com.smartentities.json.generator.generators.*;
+import org.everit.json.schema.*;
 
 public class GeneratorFactory {
 
@@ -30,6 +19,10 @@ public class GeneratorFactory {
 			jsonValueGenerator = new ObjectGenerator(schema);
 		} else if (schema instanceof ArraySchema) {
 			jsonValueGenerator = new ArrayGenerator(schema);
+		} else if (schema instanceof EnumSchema) {
+			jsonValueGenerator = new EnumGenerator(schema);
+		} else if (schema instanceof ReferenceSchema) {
+			jsonValueGenerator = new ReferenceGenerator(schema);
 		}
 
 		return jsonValueGenerator;
